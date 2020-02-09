@@ -5,18 +5,20 @@ namespace Robo_Restaurant.Properties
 {
     public class Dish
     {
-        private string dname;
+        //private string dname;
         private int weight;
         private int timeofprep;
         private List<Ingredients> ingredients = new List<Ingredients>();
         private int price;
+        public dishName dName; 
         
-
-        public string dName
+        public enum dishName
         {
-            get { return dname; }
-            set { dname = value; }
+            Borsch,
+            Green_Borsch,
+            Vegetable_Soup
         }
+        
         public int Weight
         {
             get { return weight; }
@@ -38,8 +40,9 @@ namespace Robo_Restaurant.Properties
             set { price = value; }
         }
 
-        public Dish(string dname, int weight, int timeofprep, List<Ingredients> ingred, int price)
+        public Dish(dishName dname, int weight, int timeofprep, List<Ingredients> ingred, int price)
         {
+
             dName = dname;
             Weight = weight;
             TimeOfPrep = timeofprep;
