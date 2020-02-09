@@ -5,13 +5,24 @@ namespace Robo_Restaurant.Properties
 
     public class Ingredients
     {
-        public string Iname;
-        public int Capacity;
+        private string iname;
+        private int quantity;
 
-        public Ingredients(string iname, int capacity)
+        public string Iname
+        {
+            get { return iname; }
+            set { iname = value; }
+        }
+        public int Quantity
+        {
+            get { return quantity; }
+            set { quantity = value; }
+        }
+
+        public Ingredients(string iname, int quantity)
         {
             Iname = iname;
-            Capacity = capacity;
+            Quantity = quantity;
         }
     }
 }
