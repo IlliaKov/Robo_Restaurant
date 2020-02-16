@@ -5,7 +5,6 @@ namespace Robo_Restaurant.Properties
 {
     public class Dish
     {
-        //private string dname;
         private int weight;
         private int timeofprep;
         private List<Ingredients> ingredients = new List<Ingredients>();
@@ -16,7 +15,9 @@ namespace Robo_Restaurant.Properties
         {
             Borsch,
             Green_Borsch,
-            Vegetable_Soup
+            Vegetable_Soup,
+            Strawberry_Jelly,
+            Banana_Juice
         }
         
         public int Weight
@@ -40,7 +41,7 @@ namespace Robo_Restaurant.Properties
             set { price = value; }
         }
 
-        public Dish(dishName dname, int weight, int timeofprep, List<Ingredients> ingred, int price)
+        public Dish(dishName dname, int weight, int timeofprep, List<Ingredients> ingred,int price)
         {
 
             dName = dname;
@@ -50,6 +51,5 @@ namespace Robo_Restaurant.Properties
             Price = price; 
         }
 
-        
     }
 }

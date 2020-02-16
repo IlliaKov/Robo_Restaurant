@@ -5,62 +5,35 @@ namespace Robo_Restaurant.Properties
 {
     public class Ordering
     {
-        private Dish dishh;
-        private Ingredients ingred;
-        private Restaurant rest;
         
+        Menu menuDish = new Menu();
+        
+        IngredientsBasement Base = new IngredientsBasement();
 
-        public Dish Dishh
+        
+        public Ordering()
         {
-            get { return dishh; }
-            set { dishh = value; }
+            menuDish.AddingDish();
         }
-        public Ingredients Ingred
+        public void MakeOrder(Dish.dishName DM)
         {
-            get { return ingred; }
-            set { ingred = value; }
-        }
-        public Restaurant Rest
-        {
-            get { return rest; }
-            set { rest = value; }
-        }
-
-        public Ordering(Dish dishh, Restaurant rest)
-        {
-            Dishh = dishh;
-            Rest = rest;
-        }
-
-        public void makeOrder()
-        {
-
-            if(dishh.dName == Dish.dishName.Borsch)
+            foreach (var dish in menuDish.dishes)
             {
-                Ingred.Quantity -= 1;
-                if(Ingred.Quantity <= 0)
+                if(DM == dish.dName)
                 {
-                    throw new Exception("Sorry, but there are no ingridients left to cook");
+                    foreach(var ing in dish.Ingredients)
+                    {
+                        foreach (var ing1 in Base.IngList)
+                        {
+                            if(ing1.Iname == ing.Iname)
+                            {
+                                if (ing1.Quantity > 0) ing1.Quantity--;
+                                else throw new Exception("Excuse us, but there are not enough ingredients in the kitchen to cook your dish");
+                            }
+                        }
+                    }
                 }
             }
-            else if(dishh.dName == Dish.dishName.Green_Borsch)
-            {
-                Ingred.Quantity -= 1;
-                if (Ingred.Quantity <= 0)
-                {
-                    throw new Exception("Sorry, but there are no ingridients left to cook");
-                }
-            }
-            else if (dishh.dName == Dish.dishName.Vegetable_Soup)
-            {
-                Ingred.Quantity -= 1;
-                if (Ingred.Quantity <= 0)
-                {
-                    throw new Exception("Sorry, but there are no ingridients left to cook");
-                }
-            }
-
-                
         }
     }
 }

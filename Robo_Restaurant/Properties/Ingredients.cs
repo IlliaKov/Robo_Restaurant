@@ -7,6 +7,7 @@ namespace Robo_Restaurant.Properties
     {
         private string iname;
         private int quantity;
+        private bool tempChange;
 
         public string Iname
         {
@@ -18,11 +19,17 @@ namespace Robo_Restaurant.Properties
             get { return quantity; }
             set { quantity = value; }
         }
+        public bool TempChange
+        {
+            get { return tempChange; }
+            set { tempChange = value; }
+        }
 
-        public Ingredients(string iname, int quantity)
+        public Ingredients(string iname, int quantity, bool tempChange)
         {
             Iname = iname;
             Quantity = quantity;
+            TempChange = tempChange;
         }
     }
 }
