@@ -16,16 +16,30 @@ namespace Robo_Restaurant.Properties
         }
         public void SpecTime()
         {
-
-            if (currentTime >= antiBoilingTime)
+            if(currentTime >= antiBoilingTime)
             {
-
-                foreach (var ingr in Base.IngList)
+                string ig = "";
+                foreach(var dish in menuDish.dishes)
                 {
-                    if (ingr.TempChange == false) Console.WriteLine($"It's a fresh time – so you can order only this: {ingr.Iname}");
+                    bool DishIngT = true;
+                    string ig1 = "";
+                    foreach(var ingr in dish.Ingredients)
+                    {
+                        if(ingr.TempChange == false && DishIngT == true)
+                        {
+                            ig1 += dish.dName + " ";
+                        }
+                        else
+                        {
+                            DishIngT = false;
+                            ig1 = "";
+                            break;
+                        }
+                    }
+                    ig += ig1;
 
                 }
-
+                Console.WriteLine("You can only choose these dishes: " + ig);
             }
             else if (currentTime >= closingTime)
             {
@@ -53,3 +67,18 @@ namespace Robo_Restaurant.Properties
                     
                 }
             }*/
+
+/*if (currentTime >= antiBoilingTime)
+{
+
+    foreach (var ingr in Base.IngList)
+    {
+        if (ingr.TempChange == false) Console.WriteLine($"It's a fresh time – so you can order only this: {ingr.Iname}");
+
+    }
+
+}
+else if (currentTime >= closingTime)
+{
+    throw new Exception("Sorry, but we are closed!");
+}*/
