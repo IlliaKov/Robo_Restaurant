@@ -30,14 +30,20 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Dish.cs" />
-    <Compile Include="Properties\Ingredients.cs" />
-    <Compile Include="Properties\Menu.cs" />
-    <Compile Include="Properties\Ordering.cs" />
-    <Compile Include="Properties\IngredientsBasement.cs" />
-    <Compile Include="Properties\SpecTimeOrder.cs" />
+    <Compile Include="Data Access Layer\TxtFileReader.cs" />
+    <Compile Include="Presentation Layer\Program.cs" />
+    <Compile Include="Business Logic Layer\Dish.cs" />
+    <Compile Include="Business Logic Layer\Ingredients.cs" />
+    <Compile Include="Business Logic Layer\Ordering.cs" />
+    <Compile Include="Business Logic Layer\SpecTimeOrder.cs" />
+    <Compile Include="Data Access Layer\IngredientsBasement.cs" />
+    <Compile Include="Data Access Layer\Menu.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business Logic Layer\" />
+    <Folder Include="Data Access Layer\" />
+    <Folder Include="Presentation Layer\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

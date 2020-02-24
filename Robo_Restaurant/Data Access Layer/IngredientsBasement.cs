@@ -10,8 +10,8 @@ namespace Robo_Restaurant.Properties
         
         public IngredientsBasement()
         {
-            IngList.Add(new Ingredients("Water", 0, false));
-            IngList.Add(new Ingredients("Beef", -1, true));
+            IngList.Add(new Ingredients("Water", 1, false));
+            IngList.Add(new Ingredients("Beef", 1, true));
             IngList.Add(new Ingredients("Cabbage", 5, true));
             IngList.Add(new Ingredients("Beetroot", 5, true));
             IngList.Add(new Ingredients("Potato", 10, true));

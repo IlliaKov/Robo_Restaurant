@@ -8,6 +8,8 @@ namespace Robo_Restaurant.Properties
         public List<Dish> dishes = new List<Dish>();
         public List<Ingredients> ingredients = new List<Ingredients>();
         public IngredientsBasement Basement = new IngredientsBasement();
+        public List<Menu> menuD = new List<Menu>();
+        
 
         public void AddingDish()
         {
@@ -44,6 +46,10 @@ namespace Robo_Restaurant.Properties
                 Basement.IngList[8]
             }, 50));
             dishes.Add(new Dish(Dish.dishName.Banana_Juice, 300, 15, new List<Ingredients>{Basement.IngList[9]}, 50)) ;
+        }
+        public void AddSpec(Dish d)
+        {
+            dishes.Add(d);
         }
         
     }

@@ -48,7 +48,9 @@ namespace Robo_Restaurant.Properties
             Weight = weight;
             TimeOfPrep = timeofprep;
             Ingredients = ingred;
-            Price = price; 
+            Price = price;
+
+            
         }
 
     }

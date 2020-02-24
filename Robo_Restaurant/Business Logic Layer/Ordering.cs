@@ -15,6 +15,7 @@ namespace Robo_Restaurant.Properties
         {
             menuDish.AddingDish();
         }
+
         public void MakeOrder(Dish.dishName DM)
         {
             foreach (var dish in menuDish.dishes)
@@ -28,6 +29,7 @@ namespace Robo_Restaurant.Properties
                             if(ing1.Iname == ing.Iname)
                             {
                                 if (ing1.Quantity > 0) ing1.Quantity--;
+                                
                                 else throw new Exception("Excuse us, but there are not enough ingredients in the kitchen to cook your dish");
                             }
                         }

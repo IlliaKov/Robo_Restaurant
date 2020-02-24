@@ -14,7 +14,7 @@ namespace Robo_Restaurant
                 Ordering order = new Ordering();
                 SpecTimeOrder specOrder = new SpecTimeOrder();
 
-                Console.WriteLine("Hello my friend! Here is available menu: \n 1 - Borsch, \n 2 – Green Borsch, \n 3 – Vegetable Soup, \n 4 - Strawberry Jelly, \n 5 - Banana Juice \n At 20:30 our restaraunt has SPECIAL Fresh Menu");
+                Console.WriteLine("Hello my friend! Here is available menu: \n 1 - Borsch, \n 2 – Green Borsch, \n 3 – Vegetable Soup, \n 4 - Strawberry Jelly, \n 5 - Banana Juice \n At 20:30 our restaraunt has SPECIAL Fresh Menu, \n 7 - Choose text menu: ");
 
                 option = Convert.ToInt32(Console.ReadLine());
 
@@ -87,17 +87,20 @@ namespace Robo_Restaurant
                         Console.WriteLine(ex.Message);
                     }
                 }
+                else if (option == 7)
+                {
+
+                    TxtFileReader.TxtReader();
+                }
                 else if(option == 6)
                 {
                     break;
                 }
+                
                 
             }
             Console.WriteLine("The end of choosing");
         }
     }
 }
-/*Console.WriteLine("Now you can continue - 1, or finish - 0");
-                int Cont = Convert.ToInt32(Console.ReadLine());
-                if (Cont == 0) Console.WriteLine("Thanks for using our app!");
-                else if (Cont == 1) Console.WriteLine("You have chosen to order something else");*/
+

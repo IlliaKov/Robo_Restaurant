@@ -30,6 +30,8 @@ namespace Robo_Restaurant.Properties
             Iname = iname;
             Quantity = quantity;
             TempChange = tempChange;
+
+            if (Quantity < 1) throw new Exception("You can't cook with current amount of ingredients");
         }
     }
 }
